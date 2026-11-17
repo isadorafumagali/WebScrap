@@ -38,47 +38,12 @@ O diretório `data/` contém **1.199 notícias**, publicadas entre **26/07/2026 
 
 Notícias sem tags são tratadas como `Sem_tag` na análise.
 
-## Requisitos
-
-- Python 3.9+
-- Bibliotecas: `requests`, `beautifulsoup4`, `playwright`, `joblib`, `matplotlib`, `pandas`
-
-## Instalação
-
-```bash
-git clone https://github.com/isadorafumagali/WebScrap.git
-cd WebScrap
-
-pip install requests beautifulsoup4 playwright joblib matplotlib pandas
-playwright install chromium
-```
-
-## Como usar
-
-```bash
-python coletor.py
-```
-
-O script executa, em sequência, a coleta dos links, o download das notícias para `data/` e as análises com gráficos (exibidos com `plt.show()`).
-
-### Configuração
-
-| Parâmetro | Onde | Padrão | Descrição |
-|---|---|---|---|
-| `numero_paginas` | topo do `coletor.py` | `80` | Quantidade de páginas de listagem a percorrer |
-| `n_jobs` | `Parallel(...)` | `1` | Número de threads na extração das notícias |
-| `PAUSA_BLOQUEIO_MIN/MAX_SEGUNDOS` | `coletor.py` | 10 e 20 min | Duração da pausa ao detectar bloqueio |
-| `MAX_TENTATIVAS_BLOQUEIO` | `coletor.py` | `6` | Tentativas de recuperação após bloqueio |
-
 ## Análises geradas
 
 - **Tags mais frequentes**: top 10 em contagem absoluta e top 15 em percentual do total de menções.
 - **Top 5 tags por semana**: barras empilhadas ao longo do tempo.
 - **Coocorrência de tags**: os 15 pares de tags que mais aparecem juntos na mesma notícia (impresso no terminal).
 
-## Uso responsável
-
-Este projeto foi feito para fins de estudo. Ao rodá-lo, respeite os termos de uso e o `robots.txt` do site, mantenha os intervalos entre requisições e evite aumentar o paralelismo de forma agressiva. O conteúdo das notícias pertence aos seus respectivos autores e ao portal de origem.
 
 ## Autora
 
